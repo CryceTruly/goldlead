@@ -164,7 +164,7 @@ while($r=$stmt->fetch(PDO::FETCH_OBJ)){?>
 								<?php
 while($rr=$stmt->fetch(PDO::FETCH_OBJ)){
 	?>
-	<li><a href="#" class="justify-content-between align-items-center d-flex"><h6><?php echo $rr->name?></h6> <span>
+	<li><a class="justify-content-between align-items-center d-flex"><h6><?php echo $rr->name?></h6> <span>
 
 	
 	
