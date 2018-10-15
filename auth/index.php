@@ -37,29 +37,48 @@ if (isset($_GET['msg'])){
   }else{
     
     ?>
+  <h2 class="mx-4 mt-4 mb-4">Latest Posts</h2>
 
+  <table class="table table-striped">
+  <tr>
+  <th>Post Title </th>
+  <th>Author </th>
+  <th>Created </th>
+  <th></th><th></th>
+  </tr>
 
-
-
-<h3>Latest Posts</h3>
-
-<table class="table table-stripped">
-<tr>
-<th>Post Title </th>
-<th>Author </th>
-<th>Created </th>
-<th></th><th></th>
-</tr>
-
-<?php
+`<?php
 while($row=$stmt->fetch(PDO::FETCH_OBJ)){
   ?>
   <tr>
-  <td><?php echo $row->title ?></td>
+  <td><a href="post.php?post=<?php  echo $row->id?>"> <?php echo $row->title ?></a></td>
   <td><?php echo $row->author ?></td>
   <td><?php echo $row->created_at ?></td>
   <td><a href="editpost.php?post=<?php  echo $row->id ?>" class="btn btn-link">Edit</a></td>
-  <td><a href='removepost.php?post=<?php  echo $row->id ?>' class="btn btn-warning">Delete</a></td>
+  <td><a  data-toggle="modal" data-target="#exampleModal" class="btn btn-warning">Delete</a>
+  
+  
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirm Action</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete this post?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a type="button" class="btn btn-primary" href='removepost.php?post=<?php  echo $row->id ?>'>Yes</a>
+      </div>
+    </div>
+  </div>
+</div>
+  </td>
   
   </tr>
 
@@ -71,15 +90,12 @@ while($row=$stmt->fetch(PDO::FETCH_OBJ)){
 
 
 </table>
-    <?php
+ 
+ <?php
 
 
   }
 
-?>
 
-      </div>
-    </div>
-  </div>
-</body>
-</html>
+  ?>
+

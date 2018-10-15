@@ -32,6 +32,8 @@
 			<link rel="stylesheet" href="../css/animate.min.css">
 			<link rel="stylesheet" href="../css/owl.carousel.css">
 			<link rel="stylesheet" href="../css/main.css">
+      <script src="../js/vendor/jquery-2.2.4.min.js"></script>
+      <script src="../js/vendor/bootstrap.min.js"></script>
   <title>Dashboard</title>
 </head>
 <body>
@@ -43,20 +45,34 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav mx-auto">
+    <ul class="navbar-nav ml-auto">
       
       <li class="nav-item">
-        <a class="nav-link" href="../index.php">View website</a>
+        <a class="nav-link" href="../index.php">View site</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="new.php">Create Post</a>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <span class="fa fa-plus"></span> Create
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="new.php">Add Post</a>
+        
+          <a class="dropdown-item" href="adduser.php">Add User</a>
+          <a class="dropdown-item" href="newcategory.php">Add Category</a>
+        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="categories.php">Categories</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="newcat.php">Logout <?php echo $_SESSION['name']; ?></a>
+        <a class="nav-link" href="categories.php">Users</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="logout.php">Logout<strong> <?php echo $_SESSION['name']; ?></strong> </a>
+      </li>
+     
     </ul>
   </div>
 </div>
