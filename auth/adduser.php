@@ -79,7 +79,7 @@
         // Attempt to execute
         if($stmt->execute()){
           // Redirect to login
-          header('location: login.php');
+          header('location: users.php?msg=user created successfully');
         } else {
           die('Something went wrong');
         }

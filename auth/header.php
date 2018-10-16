@@ -67,7 +67,7 @@
         <a class="nav-link" href="categories.php">Categories</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="categories.php">Users</a>
+        <a class="nav-link" href="users.php">Users</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="logout.php">Logout<strong> <?php echo $_SESSION['name']; ?></strong> </a>
